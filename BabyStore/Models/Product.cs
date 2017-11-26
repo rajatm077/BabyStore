@@ -2,10 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 namespace BabyStore.Models
 {
-    public class Product
+    public partial class Product
     {
         public int ID { get; set; }
-        [DisplayName("Product Name")]  
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }

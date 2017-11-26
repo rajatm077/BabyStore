@@ -20,14 +20,16 @@ namespace BabyStore.Controllers
             {
                 products = products.Where(p => p.Category.Name == category);
             }
-
-            if(!String.IsNullOrEmpty(search))
+            
+            if (!String.IsNullOrEmpty(search))
             {
                 products = products.Where(p => p.Name.Contains(search) ||
                                           p.Description.Contains(search) ||
                                           p.Category.Name.Contains(search));
             }
-            return View(products.ToList());
+
+            var pro = products.OrderBy(p => p.Name).ToList();
+            return View(pro);
         }
 
         // GET: Products/Details/5

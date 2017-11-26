@@ -40,7 +40,7 @@ namespace BabyStore.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            if (product == null)
+            if (product == null) 
             {
                 return HttpNotFound();
             }
